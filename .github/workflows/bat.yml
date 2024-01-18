@@ -1,6 +1,6 @@
 on: [push]
-#env:
-#  MATHWORKS_LICENSING_ENDPOINT: stage
+# env:
+#   MATHWORKS_LICENSING_ENDPOINT: stage
 jobs: 
   my-job-v2-rc:
     name: Run Tests V2
@@ -8,7 +8,8 @@ jobs:
       matrix:
         # Run this workflow on different os
         os: [windows-2022, ubuntu-22.04, macos-12]
-        release: [r2023a, r2023b]
+        # release: [r2023a, r2023b]
+        release: [r2023b]
       fail-fast: false
     runs-on: ${{ matrix.os }}
     steps: 
@@ -33,3 +34,9 @@ jobs:
         uses: matlab-actions/run-tests@v2-rc0
         with:
           source-folder: code
+
+      # Run MATLAB build tool
+      - name: Run build
+        uses: matlab-actions/run-build@v2-rc0
+        with:
+          tasks: clean mtest
