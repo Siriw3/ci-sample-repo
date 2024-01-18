@@ -4,7 +4,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup MATLAB
-        uses: matlab-actions/setup-matlab@v2-rc
+        uses: matlab-actions/setup-matlab@v2-rc0
  
       - name: Run build
-        uses: matlab-actions/run-build@v2-rc
+        uses: matlab-actions/run-build@v2-rc0
