@@ -1,5 +1,3 @@
-
-
 on: [push] # Run workflow on every push
 jobs:
   matlab-build:
